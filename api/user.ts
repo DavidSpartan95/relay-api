@@ -1,5 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { users } from '../data/users'
+import type { RelayEvent } from '../data/relayEvents'
+
+type UserResponse = Omit<(typeof users)[number], 'firstRelayRace'> & {
+  firstRelayRace: string;
+};
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const { name } = req.query;
@@ -14,5 +19,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         return res.status(404).json({ error: `User '${name}' not found` });
     }
 
-    return res.status(200).json(user);
+    const event = user.numRaces.find((e: RelayEvent) => e.date.getTime() === user.firstRelayRace.getTime());
+
+    const responseUser: UserResponse = {
+        ...user,
+        firstRelayRace: event ? `${event.year} - ${event.difficulty}` : "Unknown"
+    };
+
+    return res.status(200).json(responseUser);
 }

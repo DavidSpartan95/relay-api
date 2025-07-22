@@ -23,7 +23,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     const responseUser: UserResponse = {
         ...user,
-        firstRelayRace: event ? `${event.year} - ${event.difficulty}` : "Unknown"
+        firstRelayRace: event ? `${event.year} ${event.difficulty}` : "Unknown"
     };
 
     return res.status(200).json(responseUser);

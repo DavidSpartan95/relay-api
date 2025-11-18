@@ -1353,5 +1353,69 @@ export const relayEvents: RelayEvent[] = [
         }
         ],
         timeMethod: "Game Timing"
+    },
+    {
+        year: 2025,
+        date: new Date("2025-11-16"),
+        difficulty: Difficulty.Legendary,
+        playedGames: [
+            Game.HaloCE,
+            Game.Halo2,
+            Game.Halo3,
+            Game.HaloReach,
+            Game.Halo3ODST,
+            Game.Halo4,
+            Game.Halo5,
+            Game.HaloInfinite
+        ],
+        winningTeam: TeamName.Red,
+        teamResults: [
+            { name: TeamName.Green, time: "10:34:55" },
+            { name: TeamName.Red, time: "10:20:57" },
+            { name: TeamName.Blue, time: "10:34:37" },
+        ],
+        playerResults: [
+            // Red Team
+            { name: "Cryphon", team: TeamName.Red, win: true, playedGames: [Game.HaloInfinite] },
+            { name: "DavidSpartan95", team: TeamName.Red, win: true, playedGames: [Game.Halo5] },
+            { name: "SlateThelyon", team: TeamName.Red, win: true, playedGames: [Game.Halo4] },
+            { name: "Waifu", team: TeamName.Red, win: true, playedGames: [Game.HaloReach] },
+            { name: "Cylles", team: TeamName.Red, win: true, playedGames: [Game.Halo3ODST] },
+            { name: "SlothSG", team: TeamName.Red, win: true, playedGames: [Game.Halo3] },
+            { name: "Meetoe", team: TeamName.Red, win: true, playedGames: [Game.Halo2] },
+            { name: "Voltroneon", team: TeamName.Red, win: true, playedGames: [Game.HaloCE] },
+
+            // Green Team
+            { name: "Dyse", team: TeamName.Green, win: false, playedGames: [Game.HaloInfinite] },
+            { name: "Phobic", team: TeamName.Green, win: false, playedGames: [Game.Halo5] },
+            { name: "Mourie", team: TeamName.Green, win: false, playedGames: [Game.Halo4] },
+            { name: "Seclusive", team: TeamName.Green, win: false, playedGames: [Game.HaloReach] },
+            { name: "Bloop", team: TeamName.Green, win: false, playedGames: [Game.Halo3ODST] },
+            { name: "NervyDestroyer", team: TeamName.Green, win: false, playedGames: [Game.Halo3] },
+            { name: "Synyster", team: TeamName.Green, win: false, playedGames: [Game.Halo2] },
+            { name: "Chronos", team: TeamName.Green, win: false, playedGames: [Game.HaloCE] },
+
+            // Blue Team
+            { name: "Caitlin", team: TeamName.Blue, win: false, playedGames: [Game.HaloInfinite] },
+            { name: "BatChat", team: TeamName.Blue, win: false, playedGames: [Game.Halo5] },
+            { name: "Trouble", team: TeamName.Blue, win: false, playedGames: [Game.Halo4] },
+            { name: "Danos", team: TeamName.Blue, win: false, playedGames: [Game.HaloReach] },
+            { name: "yeVcM", team: TeamName.Blue, win: false, playedGames: [Game.Halo3ODST] },
+            { name: "SamHR", team: TeamName.Blue, win: false, playedGames: [Game.Halo3] },
+            { name: "DABLL DO YA", team: TeamName.Blue, win: false, playedGames: [Game.Halo2] },
+            { name: "The Observer", team: TeamName.Blue, win: false, playedGames: [Game.HaloCE] },
+        ],
+        source: [{
+            name: "HaloRuns 2025 Legendary Relay Race",
+            type: TypeOfSource.Video,
+            link: new URL("https://www.twitch.tv/videos/2620545773")
+        },
+        {
+            name: "Fantasy League",
+            type: TypeOfSource.Exel,
+            link: new URL("https://docs.google.com/spreadsheets/d/1fc7iczspUMw2uC_0fiZxFD3B95UiSYMIyCVVsMjp9-0/edit?usp=sharing")
+        }
+        ],
+        timeMethod: "Game Timing"
     }
 ]

@@ -12,7 +12,8 @@ export enum Game {
 
 export enum Difficulty {
     Easy = 'Easy',
-    Legendary = 'Legendary'
+    Legendary = 'Legendary',
+    LASO = 'LASO'
 }
 
 export enum TeamName {
@@ -997,10 +998,10 @@ export const relayEvents: RelayEvent[] = [
             type: TypeOfSource.Video,
             link: new URL("https://www.youtube.com/watch?v=O-EUQ3dN7Uw")
         },
-        {
+        {/*  */
             name: "HaloRuns Legendary Relay Race 2022 (Part 2/2)",
             type: TypeOfSource.Video,
-            link: new URL("https://www.youtube.com/watch?v=DAMjxQwJ_4I")
+            link: new URL("https://www.youtube.com/watch?v=4ADd2FLUomU")
         },
         {
             name: "Spreadsheet",
@@ -1339,7 +1340,12 @@ export const relayEvents: RelayEvent[] = [
         source: [{
             name: "HaloRuns 2025 Easy Relay Race",
             type: TypeOfSource.Video,
-            link: new URL("https://www.twitch.tv/videos/2516659442")
+            link: new URL("https://drive.google.com/file/d/1WvPd7es-8ZO1ohiJBxvDH7j9MsQs-MS9/view")
+        },
+        {
+            name: "2025 Haloruns Relay Race Awards",
+            type: TypeOfSource.Video,
+            link: new URL("https://www.youtube.com/watch?v=m51R6T5OmtM")
         },
         {
             name: "Fantasy League",
@@ -1414,6 +1420,57 @@ export const relayEvents: RelayEvent[] = [
             name: "Fantasy League",
             type: TypeOfSource.Exel,
             link: new URL("https://docs.google.com/spreadsheets/d/1fc7iczspUMw2uC_0fiZxFD3B95UiSYMIyCVVsMjp9-0/edit?usp=sharing")
+        }
+        ],
+        timeMethod: "Game Timing"
+    },
+    {
+        year: 2026,
+        date: new Date("2026-03-09"),
+        difficulty: Difficulty.LASO,
+        playedGames: [
+            Game.HaloCE,
+            Game.Halo2,
+            Game.HaloReach,
+            Game.Halo3ODST,
+            Game.Halo4,
+            Game.Halo5,
+        ],
+        winningTeam: TeamName.Red,
+        teamResults: [
+            { name: TeamName.Green, time: "11:57:04" },
+            { name: TeamName.Red, time: "11:09:48" },
+            { name: TeamName.Blue, time: "12:22:52" },
+        ],
+        playerResults: [
+            // Red Team
+            { name: "Phobic", team: TeamName.Red, win: true, playedGames: [Game.Halo5] },
+            { name: "Mourie", team: TeamName.Red, win: true, playedGames: [Game.Halo4] },
+            { name: "Seclusive", team: TeamName.Red, win: true, playedGames: [Game.HaloReach] },
+            { name: "Boozalinii", team: TeamName.Red, win: true, playedGames: [Game.Halo3ODST] },
+            { name: "DABLL DO YA", team: TeamName.Red, win: true, playedGames: [Game.Halo2] },
+            { name: "Alextremo08", team: TeamName.Red, win: true, playedGames: [Game.HaloCE] },
+
+            // Green Team
+            { name: "DavidSpartan95", team: TeamName.Green, win: false, playedGames: [Game.Halo5] },
+            { name: "SlateThelyon", team: TeamName.Green, win: false, playedGames: [Game.Halo4] },
+            { name: "Auraxade", team: TeamName.Green, win: false, playedGames: [Game.HaloReach] },
+            { name: "Bloop", team: TeamName.Green, win: false, playedGames: [Game.Halo3ODST] },
+            { name: "GUNS", team: TeamName.Green, win: false, playedGames: [Game.Halo2] },
+            { name: "GUNS", team: TeamName.Green, win: false, playedGames: [Game.HaloCE] },
+
+            // Blue Team
+            { name: "BatChat", team: TeamName.Blue, win: false, playedGames: [Game.Halo5] },
+            { name: "Cylles", team: TeamName.Blue, win: false, playedGames: [Game.Halo4] },
+            { name: "Mankey", team: TeamName.Blue, win: false, playedGames: [Game.HaloReach] },
+            { name: "Cylles", team: TeamName.Blue, win: false, playedGames: [Game.Halo3ODST] },
+            { name: "Synyster", team: TeamName.Blue, win: false, playedGames: [Game.Halo2] },
+            { name: "Chronos", team: TeamName.Blue, win: false, playedGames: [Game.HaloCE] },
+        ],
+        source: [{
+            name: "HaloRuns 2026 LASO",
+            type: TypeOfSource.Video,
+            link: new URL("https://www.twitch.tv/videos/2716170543")
         }
         ],
         timeMethod: "Game Timing"

@@ -15,6 +15,8 @@ export interface User {
 // Function to generate user stats 
 function generateUserStats(relayEvents: RelayEvent[]): User[] {
     const users: { [name: string]: User } = {};
+    const userEventTeams: { [key: string]: Set<TeamName> } = {}; 
+    // key = `${username}-${event.year}` (or another unique event identifier)
 
     relayEvents.forEach(event => {
         event.playerResults.forEach(playerResult => {
@@ -22,6 +24,7 @@ function generateUserStats(relayEvents: RelayEvent[]): User[] {
             const splitNames = name.split("&").map(n => n.trim());
 
             splitNames.forEach(userName => {
+
                 const u = users[userName] ||= {
                     name: userName,
                     numRaces: [],
@@ -32,30 +35,39 @@ function generateUserStats(relayEvents: RelayEvent[]): User[] {
                     teams: []
                 };
 
-                // 1) Only add the race once:
+                const eventKey = `${userName}-${event.year}`;
+
+                if (!userEventTeams[eventKey]) {
+                    userEventTeams[eventKey] = new Set();
+                }
+
+                // 1) Only add race once
                 if (!u.numRaces.includes(event)) {
                     u.numRaces.push(event);
                 }
 
-                // 2) Add to wins or losses:
+                // 2) Wins / losses
                 if (win) {
                     if (!u.wins.includes(event)) u.wins.push(event);
                 } else {
                     if (!u.losses.includes(event)) u.losses.push(event);
                 }
 
-                // 3) Track game counts:
+                // 3) Track games
                 playedGames.forEach(game => {
                     u.gameCount[game] = (u.gameCount[game] || 0) + 1;
                 });
 
-                // 4) Update earliest race:
+                // 4) Earliest race
                 if (event.date < u.firstRelayRace) {
                     u.firstRelayRace = event.date;
                 }
 
-                // 5) Allow duplicate team entries:
-                u.teams.push(team);
+                // 5) Only add a team once per event
+                if (!userEventTeams[eventKey].has(team)) {
+                    userEventTeams[eventKey].add(team);
+                    u.teams.push(team);
+                }
             });
         });
     });

@@ -20,7 +20,8 @@ export enum TeamName {
     Green = 'Green',
     Gold = 'Gold',
     Red = 'Red',
-    Blue = 'Blue'
+    Blue = 'Blue',
+    Purple = 'Purple'
 }
 
 export enum TypeOfSource {
@@ -230,7 +231,7 @@ export const relayEvents: RelayEvent[] = [
                 playedGames: [Game.HaloCE]
             },
             {
-                name: "Reraised",
+                name: "Adversary",
                 team: TeamName.Blue,
                 win: true,
                 playedGames: [Game.Halo2]
@@ -299,7 +300,7 @@ export const relayEvents: RelayEvent[] = [
             // Red Team
             { name: "Backflip", team: TeamName.Red, win: false, playedGames: [Game.HaloReach] },
             { name: "Sol", team: TeamName.Red, win: false, playedGames: [Game.HaloCE] },
-            { name: "Reraised", team: TeamName.Red, win: false, playedGames: [Game.Halo2] },
+            { name: "Adversary", team: TeamName.Red, win: false, playedGames: [Game.Halo2] },
             { name: "Legendary Robb ", team: TeamName.Red, win: false, playedGames: [Game.Halo3ODST] },
             { name: "Deadrain", team: TeamName.Red, win: false, playedGames: [Game.Halo3] },
             { name: "BadMonsterz", team: TeamName.Red, win: false, playedGames: [Game.Halo4] },
@@ -386,7 +387,7 @@ export const relayEvents: RelayEvent[] = [
             // Blue Team
             { name: "Pedrogas", team: TeamName.Blue, win: false, playedGames: [Game.HaloReach] },
             { name: "MikeHawke420", team: TeamName.Blue, win: false, playedGames: [Game.HaloCE] },
-            { name: "Reraised", team: TeamName.Blue, win: false, playedGames: [Game.Halo2] },
+            { name: "Adversary", team: TeamName.Blue, win: false, playedGames: [Game.Halo2] },
             { name: "Davco", team: TeamName.Blue, win: false, playedGames: [Game.Halo3ODST] },
             { name: "Sasquatch & Harc", team: TeamName.Blue, win: false, playedGames: [Game.Halo3] },
             { name: "Jon and Pon", team: TeamName.Blue, win: false, playedGames: [Game.Halo4] },
@@ -1368,8 +1369,8 @@ export const relayEvents: RelayEvent[] = [
             Game.HaloCE,
             Game.Halo2,
             Game.Halo3,
-            Game.HaloReach,
             Game.Halo3ODST,
+            Game.HaloReach,
             Game.Halo4,
             Game.Halo5,
             Game.HaloInfinite
@@ -1388,7 +1389,7 @@ export const relayEvents: RelayEvent[] = [
             { name: "Waifu", team: TeamName.Red, win: true, playedGames: [Game.HaloReach] },
             { name: "Cylles", team: TeamName.Red, win: true, playedGames: [Game.Halo3ODST] },
             { name: "SlothSG", team: TeamName.Red, win: true, playedGames: [Game.Halo3] },
-            { name: "Meetoe", team: TeamName.Red, win: true, playedGames: [Game.Halo2] },
+            { name: "Meeooh", team: TeamName.Red, win: true, playedGames: [Game.Halo2] },
             { name: "Voltroneon", team: TeamName.Red, win: true, playedGames: [Game.HaloCE] },
 
             // Green Team
@@ -1431,8 +1432,8 @@ export const relayEvents: RelayEvent[] = [
         playedGames: [
             Game.HaloCE,
             Game.Halo2,
-            Game.HaloReach,
             Game.Halo3ODST,
+            Game.HaloReach,
             Game.Halo4,
             Game.Halo5,
         ],
@@ -1471,6 +1472,76 @@ export const relayEvents: RelayEvent[] = [
             name: "HaloRuns 2026 LASO",
             type: TypeOfSource.Video,
             link: new URL("https://www.twitch.tv/videos/2717275410")
+        }
+        ],
+        timeMethod: "Game Timing"
+    },
+    {
+        year: 2026,
+        date: new Date("2026-06-07"),
+        difficulty: Difficulty.Easy,
+        playedGames: [
+            Game.HaloCE,
+            Game.Halo2,
+            Game.Halo3,
+            Game.Halo3ODST,
+            Game.HaloReach,
+            Game.Halo4,
+            Game.Halo5,
+            Game.HaloInfinite
+        ],
+        winningTeam: TeamName.Red,
+        teamResults: [
+            { name: TeamName.Green, time: "09:14:13" },
+            { name: TeamName.Red, time: "09:03:17" },
+            { name: TeamName.Blue, time: "09:03:41" },
+            { name: TeamName.Purple, time: "DNF" },
+        ],
+        playerResults: [
+            // Red Team
+            { name: "Znigmw", team: TeamName.Red, win: true, playedGames: [Game.HaloInfinite] },
+             { name: "Wingman", team: TeamName.Red, win: true, playedGames: [Game.Halo5] },
+            { name: "Harc", team: TeamName.Red, win: true, playedGames: [Game.Halo4] },
+            { name: "Seclusive", team: TeamName.Red, win: true, playedGames: [Game.HaloReach] },
+            { name: "Rhylum", team: TeamName.Red, win: true, playedGames: [Game.Halo3ODST] },
+            { name: "Alextremo08", team: TeamName.Red, win: true, playedGames: [Game.Halo3] },
+            { name: "Meeooh", team: TeamName.Red, win: true, playedGames: [Game.Halo2] },
+            { name: "Sub_Whistle", team: TeamName.Red, win: true, playedGames: [Game.HaloCE] },
+
+            // Green Team
+            { name: "LiamTrader", team: TeamName.Green, win: false, playedGames: [Game.HaloInfinite] },
+             { name: "Tranqylity", team: TeamName.Green, win: false, playedGames: [Game.Halo5] },
+            { name: "Mourie", team: TeamName.Green, win: false, playedGames: [Game.Halo4] },
+            { name: "Waifu", team: TeamName.Green, win: false, playedGames: [Game.HaloReach] },
+            { name: "Bloop", team: TeamName.Green, win: false, playedGames: [Game.Halo3ODST] },
+            { name: "Hyperloop", team: TeamName.Green, win: false, playedGames: [Game.Halo3] },
+            { name: "SamHR", team: TeamName.Green, win: false, playedGames: [Game.Halo2] },
+            { name: "ThatYanme", team: TeamName.Green, win: false, playedGames: [Game.HaloCE] },
+
+            // Blue Team
+            { name: "Lorhey", team: TeamName.Blue, win: false, playedGames: [Game.HaloInfinite] },
+             { name: "DavidSpartan95", team: TeamName.Blue, win: false, playedGames: [Game.Halo5] },
+            { name: "Jon and Pon", team: TeamName.Blue, win: false, playedGames: [Game.Halo4] },
+            { name: "Chronos", team: TeamName.Blue, win: false, playedGames: [Game.HaloReach] },
+            { name: "Xero", team: TeamName.Blue, win: false, playedGames: [Game.Halo3ODST] },
+            { name: "BatChat", team: TeamName.Blue, win: false, playedGames: [Game.Halo3] },
+            { name: "DABLL DO YA", team: TeamName.Blue, win: false, playedGames: [Game.Halo2] },
+            { name: "The Observer", team: TeamName.Blue, win: false, playedGames: [Game.HaloCE] },
+
+            // Purple team
+            { name: "Caitlin", team: TeamName.Purple, win: false, playedGames: [Game.HaloInfinite] },
+             { name: "Phobic", team: TeamName.Purple, win: false, playedGames: [Game.Halo5] },
+            { name: "Egg92", team: TeamName.Purple, win: false, playedGames: [Game.Halo4] },
+            { name: "Churchgoer88", team: TeamName.Purple, win: false, playedGames: [Game.HaloReach] },
+            { name: "Trouble", team: TeamName.Purple, win: false, playedGames: [Game.Halo3ODST] },
+            { name: "Rangertrue", team: TeamName.Purple, win: false, playedGames: [Game.Halo3] },
+            { name: "Sleek", team: TeamName.Purple, win: false, playedGames: [Game.Halo2] },
+            { name: "Fromthegrave", team: TeamName.Purple, win: false, playedGames: [Game.HaloCE] }
+        ],
+        source: [{
+            name: "HaloRuns 2026 Easy",
+            type: TypeOfSource.Video,
+            link: new URL("https://www.twitch.tv/videos/2790880311")
         }
         ],
         timeMethod: "Game Timing"
